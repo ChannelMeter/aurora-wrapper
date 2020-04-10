@@ -6,7 +6,7 @@ import (
   "os"
 )
 
-var hasColors = os.Getenv("cm_no_colors") != "nope"
+var hasColors = os.Getenv("cm_no_colors") != "yes"
 var x = aurora.NewAurora(hasColors)
 
 
