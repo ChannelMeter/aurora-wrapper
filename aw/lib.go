@@ -35,5 +35,5 @@ var Cyan = x.Cyan;
 var BrightCyan = x.BrightCyan
 
 func init(){
-  fmt.Println(Bold("colors on? "), Cyan(hasColors))
+  fmt.Println(Bold("colors on?:"), Cyan(hasColors))
 }
