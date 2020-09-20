@@ -1,14 +1,14 @@
 package aw
 
 import (
-  "fmt"
   "github.com/logrusorgru/aurora"
+  "golang.org/x/crypto/ssh/terminal"
   "os"
 )
 
+var isTerminal = terminal.IsTerminal(int(os.Stdout.Fd()))
 var hasColors = os.Getenv("cm_no_colors") != "yes"
-var x = aurora.NewAurora(hasColors)
-
+var x = aurora.NewAurora(!isTerminal && hasColors)
 
 var Faint = x.Faint
 var Bold = x.Bold
@@ -68,6 +68,3 @@ var BgCyan = x.BgCyan;
 var BrightCyan = x.BrightCyan
 var BgBrightCyan = x.BgBrightCyan
 
-func init(){
-  fmt.Println(Bold("colors on?:"), Cyan(hasColors))
-}
