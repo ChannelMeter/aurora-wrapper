@@ -8,7 +8,7 @@ import (
 
 var isTerminal = terminal.IsTerminal(int(os.Stdout.Fd()))
 var hasColors = os.Getenv("cm_no_colors") != "yes"
-var x = aurora.NewAurora(!isTerminal && hasColors)
+var x = aurora.NewAurora(isTerminal && hasColors)
 
 var Faint = x.Faint
 var Bold = x.Bold
